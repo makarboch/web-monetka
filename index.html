@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Монетка — главная</title>
+  <meta name="description" content="Монетка — учёт доходов и расходов для тех, кто только начинает вести бюджет.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@300..800,0..100&amp;display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="index.html" aria-label="Монетка, на главную">
+        <span class="logo__coin" aria-hidden="true"></span>
+        <span class="logo__text">монетка</span>
+      </a>
+      <button class="header__toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="header__toggle-icon" aria-hidden="true"></span>
+        <span class="header__toggle-text">Меню</span>
+      </button>
+      <div class="header__menu" id="site-menu">
+        <nav class="header__nav" aria-label="Основное меню">
+          <a class="header__link" href="pages/operations.html">Операции</a>
+          <a class="header__link" href="pages/analytics.html">Аналитика</a>
+          <a class="header__link" href="pages/budgets.html">Бюджеты</a>
+          <a class="header__link" href="pages/journal.html">Журнал</a>
+          <a class="header__link" href="tasks/index.html">Задания</a>
+        </nav>
+        <a class="btn header__cta" href="pages/operations.html">Записать трату</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero__content">
+        <h1 class="hero__title">Узнай, куда уходят твои деньги</h1>
+        <p class="hero__lead">Записывай каждую трату — это пара секунд. Монетка разложит всё по категориям, а в конце месяца покажет, на что ушло больше всего и где можно сэкономить.</p>
+        <div class="hero__actions">
+          <a class="btn btn--lg hero__cta" href="pages/operations.html">Начать учёт</a>
+          <a class="btn btn--ghost btn--lg" href="pages/analytics.html">Посмотреть пример отчёта</a>
+        </div>
+        <p class="hero__note">Без регистрации и привязки карты. Записи хранятся в твоём браузере.</p>
+      </div>
+
+      <form class="demo" id="demo-form" aria-labelledby="demo-title" novalidate>
+        <h2 class="demo__title" id="demo-title">Попробуй: запиши трату</h2>
+        <div class="field">
+          <label class="field__label" for="demo-amount">Сумма</label>
+          <div class="field__control">
+            <input class="field__input" id="demo-amount" name="amount" inputmode="numeric" autocomplete="off" value="450" aria-describedby="demo-msg">
+            <span class="field__suffix" aria-hidden="true">₽</span>
+          </div>
+        </div>
+        <fieldset class="demo__group">
+          <legend class="demo__legend">Категория</legend>
+          <div class="demo__chips">
+            <button class="chip cat--food" type="button" data-cat="food" aria-pressed="false"><span class="swatch swatch--lg chip__swatch" aria-hidden="true"></span><span>Продукты</span></button>
+            <button class="chip chip--on cat--cafe" type="button" data-cat="cafe" aria-pressed="true"><span class="swatch swatch--lg chip__swatch" aria-hidden="true"></span><span>Кафе и доставка</span></button>
+            <button class="chip cat--home" type="button" data-cat="home" aria-pressed="false"><span class="swatch swatch--lg chip__swatch" aria-hidden="true"></span><span>Жильё и связь</span></button>
+            <button class="chip cat--fun" type="button" data-cat="fun" aria-pressed="false"><span class="swatch swatch--lg chip__swatch" aria-hidden="true"></span><span>Развлечения</span></button>
+            <button class="chip cat--trans" type="button" data-cat="trans" aria-pressed="false"><span class="swatch swatch--lg chip__swatch" aria-hidden="true"></span><span>Транспорт</span></button>
+            <button class="chip cat--other" type="button" data-cat="other" aria-pressed="false"><span class="swatch swatch--lg chip__swatch" aria-hidden="true"></span><span>Другое</span></button>
+            <button class="chip cat--study" type="button" data-cat="study" aria-pressed="false"><span class="swatch swatch--lg chip__swatch" aria-hidden="true"></span><span>Учёба</span></button>
+            <button class="chip cat--subs" type="button" data-cat="subs" aria-pressed="false"><span class="swatch swatch--lg chip__swatch" aria-hidden="true"></span><span>Подписки</span></button>
+          </div>
+        </fieldset>
+        <button class="btn btn--lg btn--block" type="submit">Записать</button>
+        <p class="demo__msg" id="demo-msg" role="status"></p>
+      </form>
+    </section>
+
+    <section class="month" aria-labelledby="ribbon-title">
+      <div class="month__head container">
+        <h2 class="month__title" id="ribbon-title">Октябрь студента: пример ленты месяца</h2>
+        <p class="month__total num">Всего <span id="ribbon-total">31 240</span> ₽</p>
+      </div>
+      <div class="ribbon" id="ribbon" role="img" aria-label="Расходы за октябрь по категориям: Продукты 9 480 ₽, Кафе и доставка 7 160 ₽, Жильё и связь 4 050 ₽, Развлечения 3 120 ₽, Транспорт 2 900 ₽, Другое 1 700 ₽, Учёба 1 650 ₽, Подписки 1 180 ₽">
+        <div class="ribbon__segment cat--food" data-cat="food"><span class="ribbon__name">Продукты</span><span class="ribbon__sum num">9 480 ₽</span></div>
+        <div class="ribbon__segment cat--cafe" data-cat="cafe"><span class="ribbon__name">Кафе и доставка</span><span class="ribbon__sum num">7 160 ₽</span></div>
+        <div class="ribbon__segment cat--home" data-cat="home"><span class="ribbon__name">Жильё и связь</span><span class="ribbon__sum num">4 050 ₽</span></div>
+        <div class="ribbon__segment cat--fun" data-cat="fun"><span class="ribbon__name">Развлечения</span><span class="ribbon__sum num">3 120 ₽</span></div>
+        <div class="ribbon__segment cat--trans" data-cat="trans"><span class="ribbon__name">Транспорт</span><span class="ribbon__sum num">2 900 ₽</span></div>
+        <div class="ribbon__segment ribbon__segment--compact cat--other" data-cat="other"><span class="ribbon__name">Другое</span><span class="ribbon__sum num">1 700 ₽</span></div>
+        <div class="ribbon__segment ribbon__segment--compact cat--study" data-cat="study"><span class="ribbon__name">Учёба</span><span class="ribbon__sum num">1 650 ₽</span></div>
+        <div class="ribbon__segment ribbon__segment--compact cat--subs" data-cat="subs"><span class="ribbon__name">Подписки</span><span class="ribbon__sum num">1 180 ₽</span></div>
+      </div>
+      <ul class="legend container" id="ribbon-legend" aria-hidden="true">
+        <li class="legend__item cat--food" data-cat="food"><span class="swatch"></span><span class="num">Продукты, 30%</span></li>
+        <li class="legend__item cat--cafe" data-cat="cafe"><span class="swatch"></span><span class="num">Кафе и доставка, 23%</span></li>
+        <li class="legend__item cat--home" data-cat="home"><span class="swatch"></span><span class="num">Жильё и связь, 13%</span></li>
+        <li class="legend__item cat--fun" data-cat="fun"><span class="swatch"></span><span class="num">Развлечения, 10%</span></li>
+        <li class="legend__item cat--trans" data-cat="trans"><span class="swatch"></span><span class="num">Транспорт, 9%</span></li>
+        <li class="legend__item cat--other" data-cat="other"><span class="swatch"></span><span class="num">Другое, 5%</span></li>
+        <li class="legend__item cat--study" data-cat="study"><span class="swatch"></span><span class="num">Учёба, 5%</span></li>
+        <li class="legend__item cat--subs" data-cat="subs"><span class="swatch"></span><span class="num">Подписки, 4%</span></li>
+      </ul>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="how-title">
+      <div class="section__inner container">
+        <h2 class="section__title steps__heading" id="how-title">Три шага, и месяц перед глазами</h2>
+        <ol class="steps">
+          <li class="steps__item">
+            <span class="steps__num num" aria-hidden="true">1</span>
+            <h3 class="steps__title">Запиши трату</h3>
+            <p class="steps__text">Сумма и категория — этого достаточно. Дата по умолчанию сегодняшняя, комментарий по желанию.</p>
+          </li>
+          <li class="steps__item">
+            <span class="steps__num num" aria-hidden="true">2</span>
+            <h3 class="steps__title">Смотри, как растёт месяц</h3>
+            <p class="steps__text">Каждая запись сразу попадает в ленту месяца. Сразу видно, какая категория занимает больше всего места.</p>
+          </li>
+          <li class="steps__item">
+            <span class="steps__num num" aria-hidden="true">3</span>
+            <h3 class="steps__title">Получи разбор месяца</h3>
+            <p class="steps__text">Сравнение с прошлым месяцем, превышенные лимиты и конкретные подсказки, где можно сэкономить.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="report-title">
+      <div class="section__inner report container">
+        <div class="report__content">
+          <h2 class="section__title report__title" id="report-title">Отчёт объясняет словами, а не только графиками</h2>
+          <p class="report__summary num">В октябре ты потратил 31 240 ₽ — на 2 100 ₽ меньше, чем в сентябре. Отложено 6 760 ₽, это 18% дохода.</p>
+          <a class="btn btn--ghost report__link" href="pages/analytics.html">Открыть пример отчёта целиком</a>
+        </div>
+        <ul class="insights">
+          <li class="insights__item">
+            <svg class="insights__icon insights__icon--warning" aria-hidden="true" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 4 L26 24 H2 Z"></path><path d="M14 11 V17"></path><path d="M14 20 V21"></path></svg>
+            <p class="insights__text num"><strong>Кафе и доставка: лимит превышен на 1 160 ₽.</strong> Это на 35% больше, чем в сентябре.</p>
+          </li>
+          <li class="insights__item">
+            <svg class="insights__icon insights__icon--good" aria-hidden="true" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 15 L11 22 L24 6"></path></svg>
+            <p class="insights__text num"><strong>Развлечения: на 2 480 ₽ меньше,</strong> чем в прошлом месяце.</p>
+          </li>
+          <li class="insights__item">
+            <svg class="insights__icon insights__icon--info" aria-hidden="true" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 14 H25"></path><path d="M14 3 V25"></path></svg>
+            <p class="insights__text num"><strong>Подписки: 1 180 ₽ каждый месяц.</strong> Проверь, всеми ли ты пользуешься.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="journal-title">
+      <div class="section__inner container">
+        <div class="journal__head">
+          <h2 class="section__title" id="journal-title">Журнал о деньгах</h2>
+          <a class="journal__all" href="pages/journal.html">Все статьи</a>
+        </div>
+        <div class="journal__grid">
+          <article class="card">
+            <div class="card__media card__media--cobalt">
+              <img class="card__img" src="img/articles/50-30-20.jpg" alt="Студенческий билет и купюры на столе" width="800" height="600" loading="lazy">
+            </div>
+            <h3 class="card__title"><a class="card__link" href="pages/article-50-30-20.html">Правило 50/30/20 простыми словами</a></h3>
+            <p class="card__text">Как поделить доход на обязательное, желания и накопления, даже если это стипендия и подработка.</p>
+            <p class="card__meta">5 минут чтения</p>
+          </article>
+          <article class="card">
+            <div class="card__media card__media--coin">
+              <img class="card__img" src="img/articles/budget-habits.jpg" alt="Блокнот со списком покупок" width="800" height="600" loading="lazy">
+            </div>
+            <h3 class="card__title"><a class="card__link" href="pages/article-budget-habits.html">Как вести бюджет и не бросить через неделю</a></h3>
+            <p class="card__text">Пять привычек, которые помогают записывать траты каждый день.</p>
+            <p class="card__meta">7 минут чтения</p>
+          </article>
+          <article class="card">
+            <div class="card__media card__media--cafe">
+              <img class="card__img" src="img/articles/small-spends.jpg" alt="Стакан кофе навынос среди кофейных зёрен" width="800" height="600" loading="lazy">
+            </div>
+            <h3 class="card__title"><a class="card__link" href="pages/article-small-spends.html">Мелкие траты, которые съедают бюджет</a></h3>
+            <p class="card__text">Кофе навынос, доставка и подписки: считаем, сколько это выходит за год.</p>
+            <p class="card__meta">4 минуты чтения</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="section__inner faq container">
+        <h2 class="section__title faq__title" id="faq-title">Частые вопросы</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">Где хранятся мои записи?</summary>
+            <p class="faq__answer">В твоём браузере, на этом устройстве. На сервер ничего не отправляется. Чтобы перенести записи на другое устройство, выгрузи их в файл в разделе «Операции». Сначала там показан пример — когда будешь готов вести свой учёт, нажми «Убрать пример».</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Нужно ли привязывать банковскую карту?</summary>
+            <p class="faq__answer">Нет. Траты вводятся вручную — так ты лучше замечаешь, на что уходят деньги.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Как исправить ошибку в записи?</summary>
+            <p class="faq__answer">Удали запись в списке операций и добавь заново. Если удалил не ту, нажми «Вернуть» в появившемся сообщении.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Какие есть категории?</summary>
+            <p class="faq__answer">Расходы: продукты, кафе и доставка, жильё и связь, транспорт, развлечения, учёба, подписки и другое. Доходы: стипендия, подработка, зарплата, подарки и другое.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__about">
+        <a class="logo logo--inverse" href="index.html" aria-label="Монетка, на главную">
+          <span class="logo__coin" aria-hidden="true"></span>
+          <span class="logo__text">монетка</span>
+        </a>
+        <p class="footer__text">Учёт доходов и расходов для тех, кто только начинает вести бюджет.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Разделы сайта">
+        <h2 class="footer__title">Сервис</h2>
+        <ul class="footer__list">
+          <li><a class="footer__link" href="pages/operations.html">Операции</a></li>
+          <li><a class="footer__link" href="pages/analytics.html">Аналитика</a></li>
+          <li><a class="footer__link" href="pages/budgets.html">Бюджеты</a></li>
+          <li><a class="footer__link" href="pages/journal.html">Журнал</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__nav" aria-label="Учебные работы">
+        <h2 class="footer__title">Учёба</h2>
+        <ul class="footer__list">
+          <li><a class="footer__link" href="tasks/index.html">Задания</a></li>
+          <li><a class="footer__link" href="tasks/coursework/index.html">Курсовая работа</a></li>
+          <li><a class="footer__link" href="pages/about.html">О проекте</a></li>
+          <li><a class="footer__link" href="#">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom container">Учебный проект по курсу вёрстки, 2026. Автор — Макар Боч.</div>
+  </footer>
+
+  <script src="js/main-demo.js"></script>
+  <script src="js/header.js"></script>
+</body>
+</html>

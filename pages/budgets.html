@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Монетка — бюджеты</title>
+  <meta name="description" content="Бюджеты: лимиты на месяц по категориям расходов и цели накоплений.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@300..800,0..100&amp;display=swap">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="../index.html" aria-label="Монетка, на главную">
+        <span class="logo__coin" aria-hidden="true"></span>
+        <span class="logo__text">монетка</span>
+      </a>
+      <button class="header__toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="header__toggle-icon" aria-hidden="true"></span>
+        <span class="header__toggle-text">Меню</span>
+      </button>
+      <div class="header__menu" id="site-menu">
+        <nav class="header__nav" aria-label="Основное меню">
+          <a class="header__link" href="operations.html">Операции</a>
+          <a class="header__link" href="analytics.html">Аналитика</a>
+          <a class="header__link" href="budgets.html" aria-current="page">Бюджеты</a>
+          <a class="header__link" href="journal.html">Журнал</a>
+          <a class="header__link" href="../tasks/index.html">Задания</a>
+        </nav>
+        <a class="btn header__cta" href="operations.html">Записать трату</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main container">
+    <h1 class="page-head__title">Бюджеты</h1>
+    <p class="page-lead">Лимит — сколько ты готов потратить на категорию за месяц. Полоса показывает, сколько уже ушло в этом месяце; превышение аналитика отметит красным.</p>
+
+    <section class="report-section" aria-labelledby="limits-title">
+      <h2 class="report-section__title" id="limits-title">Лимиты на <span id="limits-month"></span></h2>
+      <ul class="limits" id="limits"></ul>
+    </section>
+
+    <section class="report-section" aria-labelledby="goals-title">
+      <h2 class="report-section__title" id="goals-title">Цели накоплений</h2>
+      <div class="goals">
+        <div class="goals__list" id="goals"></div>
+
+        <form class="goal-form" id="goal-form" aria-labelledby="goal-form-title" novalidate>
+          <h3 class="goal-form__title" id="goal-form-title">Новая цель</h3>
+          <div class="field">
+            <label class="field__label" for="goal-name">Название</label>
+            <input class="input" id="goal-name" maxlength="40" autocomplete="off" placeholder="Например: поездка летом" aria-describedby="goal-name-err">
+            <p class="field__error" id="goal-name-err"></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="goal-target">Сколько нужно накопить, ₽</label>
+            <input class="input" id="goal-target" inputmode="numeric" autocomplete="off" placeholder="0" aria-describedby="goal-target-err">
+            <p class="field__error" id="goal-target-err"></p>
+          </div>
+          <button class="btn btn--block" type="submit">Добавить цель</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" hidden>
+    <span class="toast__text num" id="toast-text"></span>
+    <button class="toast__action" type="button" id="toast-action"></button>
+  </div>
+
+  <footer class="footer footer--compact">
+    <div class="footer__bar container">
+      <span>Монетка — учебный проект по курсу вёрстки, 2026</span>
+      <nav class="footer__links" aria-label="Учебные работы">
+        <a class="footer__bar-link" href="../tasks/index.html">Задания</a>
+        <a class="footer__bar-link" href="../tasks/coursework/index.html">Курсовая работа</a>
+        <a class="footer__bar-link" href="about.html">О проекте</a>
+      </nav>
+    </div>
+  </footer>
+
+  <template id="tpl-limit">
+    <li class="limits__row">
+      <span class="limits__name"><span class="swatch swatch--lg" aria-hidden="true"></span><span class="limits__cat"></span></span>
+      <div class="limits__state num">
+        <div class="meter" aria-hidden="true"><div class="meter__fill"></div></div>
+        <span class="limits__note"></span>
+      </div>
+      <form class="limits__form" novalidate>
+        <label class="visually-hidden limits__label"></label>
+        <input class="input limits__input num" inputmode="numeric" autocomplete="off" placeholder="Без лимита">
+        <button class="btn btn--ghost limits__save" type="submit">Сохранить</button>
+      </form>
+    </li>
+  </template>
+
+  <template id="tpl-goal">
+    <article class="goal">
+      <div class="goal__head">
+        <h3 class="goal__name"></h3>
+        <button class="icon-btn goal__delete" type="button"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4 L14 14"></path><path d="M14 4 L4 14"></path></svg></button>
+      </div>
+      <p class="goal__sum num"></p>
+      <div class="meter" aria-hidden="true"><div class="meter__fill"></div></div>
+      <p class="goal__rest num"></p>
+      <form class="goal__form" novalidate>
+        <label class="visually-hidden goal__label"></label>
+        <input class="input goal__input num" inputmode="numeric" autocomplete="off" placeholder="Сумма, ₽">
+        <button class="btn btn--ghost" type="submit">Пополнить</button>
+      </form>
+    </article>
+  </template>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/budgets.js"></script>
+  <script src="../js/header.js"></script>
+</body>
+</html>

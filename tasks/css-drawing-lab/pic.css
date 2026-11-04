@@ -1,0 +1,407 @@
+/* центрируем  холст*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /*высота на весь экран */
+  background-color: white; 
+  margin: 0;
+}
+
+/* главный холст */
+.canvas {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 2px solid grey; 
+  
+  position: relative; 
+  overflow: hidden;
+}
+
+/* полосатый пол */
+.floor {
+  width: 100%;
+  height: 50px;
+  position: absolute; 
+  bottom: 0; 
+  z-index: 2;
+  
+  background: repeating-linear-gradient(
+    to right,
+    #ffe600, 
+    #ffe600 14px, 
+    #ffaa00 14px, 
+    #ffaa00 28px 
+  );
+
+}
+
+/* динозавр */
+.dinosaur {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  bottom: 40px; 
+  left: -15px;   /*сдвигаем динозавра левее */
+  z-index: 3;
+  
+  transform: scale(1.15);   /* увеличиваем всего динозавра в 1.15 раз */
+  transform-origin: bottom center; 
+}
+
+/* пузо */
+.belly {
+  width: 50px;
+  height: 40px;
+  border-radius: 50%; 
+  
+  
+  background: radial-gradient(circle at 75% 75%, #ffffff 0%, #8cc63f 60%, #689922 100%);
+
+  position: absolute;
+  bottom: 25px; 
+  left: 30px;
+}
+
+/* шея */
+.neck {
+  width: 12px;
+  height: 35px;
+  background-color: #8cc63f; 
+  border-radius: 10px;
+  
+  position: absolute;
+  bottom: 50px; 
+  left: 60px; 
+  
+  transform: rotate(30deg);
+  z-index: -1;
+}
+
+/* голова */
+.head {
+  width: 30px;
+  height: 35px;
+  border-radius: 50%; 
+  
+  background-color: #8cc63f;
+  
+  position: absolute;
+  bottom: 70px; 
+  left: 65px;
+  transform: rotate(-70deg);
+}
+
+/* руки общее */
+.hand {
+  width: 18px;
+  height: 6px;
+  background-color: #689922;
+  border-radius: 5px;
+  position: absolute;
+  transform: rotate(20deg);
+}
+
+/* левая рука */
+.lhand {
+  left: 57px;
+  bottom: 45px;
+  z-index: 2;
+}
+
+/* правая рука */
+.rhand {
+  left: 72px;
+  bottom: 46px;
+  z-index: 2;
+}
+
+/* предплечье */
+.forearm {
+  width: 12px;
+  height: 6px;
+  background-color: #689922;
+  border-radius: 50%;
+
+  position: absolute;
+  top: -2px;
+  left: 16px;
+
+  transform: rotate(70deg);
+  transform-origin: left center; /* точка сгиба слева */
+}
+
+/* ноги */
+.leg {
+  width: 8px;
+  background-color: #689922;
+  border-radius: 5px;
+
+  position: absolute;
+  bottom: 8px;
+
+  transform: rotate(10deg);
+  z-index: -1;
+}
+
+/* левая голень — длиннее */
+.lleg {
+  height: 25px;
+  left: 40px;
+}
+
+/* правая голень */
+.rleg {
+  height: 20px;
+  left: 54px;
+}
+
+/* общее для стоп: форма и градиент */
+.foot {
+  width: 20px;
+  height: 10px;
+
+  /* полукруг: верхние углы круглые, нижние прямые, чтобы стоять на полу */
+  border-radius: 25px 45px 0 0;
+
+  background: radial-gradient(circle at 90% 30%, #ffffff 0%, #8cc63f 30%, #689922 100%);
+
+  position: absolute;
+  bottom: 7px;
+
+  transform: rotate(7deg);
+}
+
+/* левая стопа */
+.lfoot {
+  left: 39px;
+}
+
+/* правая стопа — за пузом */
+.rfoot {
+  left: 53px;
+  z-index: -1;
+}
+
+/* хвост */
+.tail {
+  width: 35px;
+  height: 45px;
+  background-color: transparent;
+  border-radius: 70%;
+  border-left: 12px solid #8cc63f;
+  
+  position: absolute;
+  bottom: 38px; 
+  left: 15px; 
+  
+  transform: rotate(-10deg); 
+  z-index: -2; 
+}
+
+
+.eye {
+  width: 6px;
+  height: 10px;
+  background-color: black; 
+  border-radius: 50%;
+  
+  position: absolute;
+  z-index: 2;
+}
+
+/* чисто овал зрачка */
+.pupil {
+  width: 3px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  
+  position: absolute;
+  bottom: 2px; 
+  right: 1px;  
+}
+
+/* координаты левого глаза */
+.leye {
+  bottom: 88px; 
+  left: 75px; 
+}
+
+/* координаты правого глаза */
+.reye {
+  bottom: 89px; 
+  left: 83px; 
+}
+
+
+
+/* общий стиль для ноздрей */
+.nostril {
+  width: 3px;
+  height: 3px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2; 
+}
+
+/* левая ноздря */
+.lnostril {
+  bottom: 79px; 
+  left: 81px; 
+}
+
+/* правая ноздря  */
+.rnostril {
+  bottom: 81px; 
+  left: 86px; 
+}
+
+/* общий стиль для всех зубов: создаем треугольник */
+.tooth {
+  width: 0;
+  height: 0;
+  
+  /* боковые рамки прозрачные, задают ширину зуба */
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  
+  /* верхняя рамка желтая, задает длину зуба */
+  border-top: 3px solid #ffe600; 
+  
+  position: absolute;
+  z-index: 2; /* рисуем поверх головы */
+}
+
+
+.tooth1 {
+  bottom: 74px;
+  left: 77px;
+  transform: rotate(20deg);
+}
+
+.tooth2 {
+  bottom: 73px;
+  left: 81px;
+  transform: rotate(5deg);
+}
+
+.tooth3 {
+  bottom: 73px;
+  left: 85px;
+  transform: rotate(-5deg);
+}
+
+.tooth4 {
+  bottom: 74px;
+  left: 88px;
+  transform: rotate(-20deg);
+}
+
+/* рожки общее */
+.horn {
+  width: 1px; 
+  height: 12px;
+  background-color: #8cc63f; 
+  
+  position: absolute;
+}
+
+/* левая антенна */
+.lhorn {
+  bottom: 98px;
+  left: 72px; 
+  transform: rotate(-25deg);
+}
+
+/* правая антенна */
+.rhorn {
+  bottom: 100px; 
+  left: 83px; 
+  transform: rotate(25deg);
+}
+
+/* трава */
+.grass {
+  position: absolute;
+  background-color: transparent;
+  border-radius: 50%; /* делает форму круглой/овальной */
+  z-index: 1; 
+}
+
+.grass1 {
+   width: 40px; 
+  height: 60px;
+  border-left: 4px solid #00ea00; 
+  
+  bottom: 30px; 
+  right: 15px; 
+  
+  transform: rotate(10deg);
+}
+
+.grass2 {
+  width: 40px; 
+  height: 60px;
+  border-left: 4px solid #00ea00; 
+  
+  bottom: 30px; 
+  right: -10px;  
+  
+  transform: rotate(10deg);
+}
+
+.grass3 {
+  width: 40px; 
+  height: 60px;
+  border-right: 4px solid #00ea00; 
+  
+  bottom: 30px; 
+  right: 0px; 
+  
+  transform: rotate(-10deg); 
+}
+
+/* ветка */
+.branch {
+  position: absolute;
+  width: 90px;
+  height: 60px; 
+  background-color: transparent;
+  
+  /* берем верхнюю рамку*/
+  border-top: 5px solid #5a2a18; 
+  border-radius: 50%;
+  
+  top: 3px; 
+  right: -35px;
+  transform: rotate(-30deg); 
+}
+
+/* листья */
+.leaf {
+  position: absolute;
+  background-color: #00ea00; 
+  border-radius: 100% 0 100% 0; 
+  z-index: 2; 
+}
+
+.leaf1 {
+  width: 30px; height: 10px;
+  top: 0px; right: 27px;
+  transform: rotate(30deg); 
+}
+
+.leaf2 {
+  width: 35px; height: 12px;
+  top: 30px; right: 12px;
+  transform: rotate(80deg); 
+}
+
+.leaf3 {
+  width: 25px; height: 9px;
+  top: 10px; right: -8px;
+  transform: rotate(60deg); 
+}

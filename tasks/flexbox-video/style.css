@@ -1,0 +1,121 @@
+.scene {
+    width: 200px;
+    height: 200px;
+    background-color: #df80ed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end; 
+    position: relative;
+    overflow: hidden;
+    font-family: sans-serif;
+    border: 2px solid #ccc;
+    transition: filter 0.5s ease;
+}
+
+.scene__text {
+    position: absolute;
+    top: 15px; 
+    font-size: 16px; 
+    color: #222;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 10;
+    white-space: nowrap; 
+}
+
+.scene__text--hover {
+    left: 20px;
+    transform: rotate(-5deg); 
+}
+
+.scene__text--active {
+    right: 20px;
+    transform: rotate(5deg); 
+}
+
+.scene__character {
+    transition: all 0.8s ease; 
+}
+
+.scene__character--prince {
+    order: 1; 
+    max-height: 85%;
+    transform-origin: center bottom;
+}
+
+.scene__character--frog {
+    order: 2; 
+    max-height: 35%;
+    opacity: 0;
+    transform-origin: center bottom;
+
+    offset-path: path("M 70 -20 C -50 70, 5 70, -15 0");
+    offset-anchor: left top;  
+    offset-rotate: 0deg;      
+    offset-distance: 0%;      
+}
+
+
+.scene__character--princess {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    max-height: 75%;
+    opacity: 0;
+    transform: scale(0.1); 
+    transform-origin: bottom center;
+    pointer-events: none; 
+}
+
+
+.scene:hover .scene__text--hover {
+    opacity: 1;
+}
+
+.scene:hover .scene__character--frog {
+    opacity: 1;
+    offset-distance: 100%; 
+}
+
+@keyframes shake-head {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+.scene__character--prince:hover {
+    animation: shake-head 0.5s infinite ease-in-out;
+}
+
+@keyframes jump-slightly {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.scene__character--frog:hover {
+    animation: jump-slightly 0.4s infinite ease-in-out;
+}
+
+
+.scene:active {
+    filter: sepia(100%);
+}
+
+.scene:active .scene__text--hover {
+    opacity: 0;
+}
+
+.scene:active .scene__text--active {
+    opacity: 1;
+}
+
+.scene:active .scene__character--frog {
+    opacity: 0;
+    transform: scale(0.1);
+}
+
+.scene:active .scene__character--princess {
+    opacity: 1;
+    transform: scale(1);
+}

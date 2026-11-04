@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Монетка — журнал</title>
+  <meta name="description" content="Журнал о деньгах: короткие статьи о бюджете для тех, кто только начинает.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@300..800,0..100&amp;display=swap">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="../index.html" aria-label="Монетка, на главную">
+        <span class="logo__coin" aria-hidden="true"></span>
+        <span class="logo__text">монетка</span>
+      </a>
+      <button class="header__toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="header__toggle-icon" aria-hidden="true"></span>
+        <span class="header__toggle-text">Меню</span>
+      </button>
+      <div class="header__menu" id="site-menu">
+        <nav class="header__nav" aria-label="Основное меню">
+          <a class="header__link" href="operations.html">Операции</a>
+          <a class="header__link" href="analytics.html">Аналитика</a>
+          <a class="header__link" href="budgets.html">Бюджеты</a>
+          <a class="header__link" href="journal.html" aria-current="page">Журнал</a>
+          <a class="header__link" href="../tasks/index.html">Задания</a>
+        </nav>
+        <a class="btn header__cta" href="operations.html">Записать трату</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main container">
+    <h1 class="page-head__title">Журнал о деньгах</h1>
+    <p class="page-lead">Короткие статьи о том, как вести бюджет, если ты только начинаешь: без сложных терминов, с примерами из жизни студента.</p>
+
+    <div class="journal__grid page-section">
+      <article class="card">
+        <div class="card__media card__media--cobalt">
+          <img class="card__img" src="../img/articles/50-30-20.jpg" alt="Студенческий билет и купюры на столе" width="800" height="600" loading="lazy">
+        </div>
+        <p class="card__tag">Основы бюджета</p>
+        <h2 class="card__title"><a class="card__link" href="article-50-30-20.html">Правило 50/30/20 простыми словами</a></h2>
+        <p class="card__text">Как поделить доход на обязательное, желания и накопления, даже если это стипендия и подработка.</p>
+        <p class="card__meta"><time datetime="2026-10-20">20 октября 2026</time>, 5 минут чтения</p>
+      </article>
+      <article class="card">
+        <div class="card__media card__media--coin">
+          <img class="card__img" src="../img/articles/budget-habits.jpg" alt="Блокнот со списком покупок" width="800" height="600" loading="lazy">
+        </div>
+        <p class="card__tag">Привычки</p>
+        <h2 class="card__title"><a class="card__link" href="article-budget-habits.html">Как вести бюджет и не бросить через неделю</a></h2>
+        <p class="card__text">Пять привычек, которые помогают записывать траты каждый день.</p>
+        <p class="card__meta"><time datetime="2026-10-13">13 октября 2026</time>, 7 минут чтения</p>
+      </article>
+      <article class="card">
+        <div class="card__media card__media--cafe">
+          <img class="card__img" src="../img/articles/small-spends.jpg" alt="Стакан кофе навынос среди кофейных зёрен" width="800" height="600" loading="lazy">
+        </div>
+        <p class="card__tag">Расходы</p>
+        <h2 class="card__title"><a class="card__link" href="article-small-spends.html">Мелкие траты, которые съедают бюджет</a></h2>
+        <p class="card__text">Кофе навынос, доставка и подписки: считаем, сколько это выходит за год.</p>
+        <p class="card__meta"><time datetime="2026-10-27">27 октября 2026</time>, 4 минуты чтения</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer footer--compact">
+    <div class="footer__bar container">
+      <span>Монетка — учебный проект по курсу вёрстки, 2026</span>
+      <nav class="footer__links" aria-label="Учебные работы">
+        <a class="footer__bar-link" href="../tasks/index.html">Задания</a>
+        <a class="footer__bar-link" href="../tasks/coursework/index.html">Курсовая работа</a>
+        <a class="footer__bar-link" href="about.html">О проекте</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/header.js"></script>
+</body>
+</html>

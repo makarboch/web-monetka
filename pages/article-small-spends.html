@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Монетка — мелкие траты, которые съедают бюджет</title>
+  <meta name="description" content="Кофе навынос, доставка и подписки: считаем, сколько это выходит за год.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@300..800,0..100&amp;display=swap">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="../index.html" aria-label="Монетка, на главную">
+        <span class="logo__coin" aria-hidden="true"></span>
+        <span class="logo__text">монетка</span>
+      </a>
+      <button class="header__toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="header__toggle-icon" aria-hidden="true"></span>
+        <span class="header__toggle-text">Меню</span>
+      </button>
+      <div class="header__menu" id="site-menu">
+        <nav class="header__nav" aria-label="Основное меню">
+          <a class="header__link" href="operations.html">Операции</a>
+          <a class="header__link" href="analytics.html">Аналитика</a>
+          <a class="header__link" href="budgets.html">Бюджеты</a>
+          <a class="header__link" href="journal.html" aria-current="page">Журнал</a>
+          <a class="header__link" href="../tasks/index.html">Задания</a>
+        </nav>
+        <a class="btn header__cta" href="operations.html">Записать трату</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-page">
+      <div class="article-head container">
+        <p class="breadcrumbs"><a href="journal.html">Журнал</a><span class="breadcrumbs__sep" aria-hidden="true"> / </span><span class="breadcrumbs__current">Расходы</span></p>
+        <h1 class="article-head__title">Мелкие траты, которые съедают бюджет</h1>
+        <p class="article-head__lead">Кофе навынос, доставка и подписки по отдельности стоят копейки. Вместе за год они складываются в сумму, на которую можно купить новый ноутбук.</p>
+        <p class="article-head__meta"><time datetime="2026-10-27">27 октября 2026</time>, 4 минуты чтения</p>
+      </div>
+
+      <figure class="article-cover container">
+        <div class="article-cover__media figure__media figure__media--cafe">
+          <img class="figure__img" src="../img/articles/small-spends.jpg" alt="Стакан кофе навынос среди кофейных зёрен" width="1200" height="514">
+        </div>
+      </figure>
+
+      <div class="article-layout container">
+        <nav class="toc" aria-label="Содержание статьи">
+          <p class="toc__title">В статье</p>
+          <ul class="toc__list">
+            <li><a class="toc__link" href="#latte">Эффект латте</a></li>
+            <li><a class="toc__link" href="#year">Считаем за год</a></li>
+            <li><a class="toc__link" href="#where">Где прячутся мелкие траты</a></li>
+            <li><a class="toc__link" href="#cut">Как сократить и не страдать</a></li>
+          </ul>
+        </nav>
+
+        <article class="prose num">
+          <h2 id="latte">Эффект латте</h2>
+          <p>Так называют привычку тратить понемногу, но каждый день. Одна чашка кофе по дороге на пары ничего не значит. Двадцать чашек в месяц — это уже заметная строчка в бюджете, а за год набегает больше, чем стипендия за несколько месяцев.</p>
+          <p>Коварство мелких трат в том, что их не замечаешь. Крупную покупку обдумываешь заранее, а за кофе платишь телефоном на ходу и через минуту забываешь.</p>
+
+          <h2 id="year">Считаем за год</h2>
+          <p>Возьмём обычный месяц студента: кофе в будни, пара заказов доставки в неделю и несколько подписок.</p>
+          <dl class="calc">
+            <div class="calc__row"><dt class="calc__label">Кофе навынос, 20 × 180 ₽</dt><dd class="calc__value">3 600 ₽</dd></div>
+            <div class="calc__row"><dt class="calc__label">Доставка, 4 × 600 ₽</dt><dd class="calc__value">2 400 ₽</dd></div>
+            <div class="calc__row"><dt class="calc__label">Подписки</dt><dd class="calc__value">1 180 ₽</dd></div>
+            <div class="calc__row"><dt class="calc__label">Итого в месяц</dt><dd class="calc__value">7 180 ₽</dd></div>
+            <div class="calc__row"><dt class="calc__label">За год, × 12</dt><dd class="calc__value">86 160 ₽</dd></div>
+          </dl>
+          <p>В месяц выходит 7 180 ₽ — примерно столько же, сколько уходит на транспорт и учёбу вместе. За год это 86 160 ₽, хотя ни одна покупка по отдельности не дороже шестисот рублей.</p>
+          <figure class="figure">
+            <div class="figure__media figure__media--coin">
+              <img class="figure__img" src="../img/articles/small-spends-delivery.jpg" alt="Курьер передаёт пакет с заказом у двери" width="1400" height="788" loading="lazy">
+            </div>
+            <figcaption class="figure__caption">Доставку часто заказывают не от голода, а от усталости. Это легко заметить по времени заказов.</figcaption>
+          </figure>
+
+          <h2 id="where">Где прячутся мелкие траты</h2>
+          <figure class="figure figure--right">
+            <div class="figure__media figure__media--portrait">
+              <img class="figure__img" src="../img/articles/small-spends-subscriptions.jpg" alt="Телефон с иконками приложений на экране" width="600" height="800" loading="lazy">
+            </div>
+            <figcaption class="figure__caption">Подписки списываются сами, поэтому о них забывают первыми.</figcaption>
+          </figure>
+          <ul>
+            <li><strong>Кафе и кофе навынос.</strong> Самая заметная категория у студентов: перекус между парами, кофе по дороге, обед в кафе вместо столовой.</li>
+            <li><strong>Доставка.</strong> К цене блюда добавляются доставка и сервисный сбор, и заказ выходит почти вдвое дороже той же еды из магазина.</li>
+            <li><strong>Подписки.</strong> Музыка, кино, облако, игры. Часть из них ты давно не открываешь, но деньги списываются каждый месяц.</li>
+            <li><strong>Такси на короткие расстояния.</strong> Поездка на три остановки стоит как десяток поездок на автобусе.</li>
+          </ul>
+          <p>Найти такие траты проще всего в ленте месяца: категории с множеством мелких записей сразу видны.</p>
+
+          <h2 id="cut">Как сократить и не страдать</h2>
+          <p>Отказываться от всего не нужно — так учёт быстро превратится в наказание. Лучше выбрать одну категорию и поставить на неё лимит в разделе «Бюджеты». Например, кофе только три раза в неделю, а в остальные дни термокружка из дома.</p>
+          <p>Раз в квартал пересматривай подписки и отключай те, которыми не пользовался последний месяц. Даже две отключённые подписки дают несколько тысяч в год.</p>
+          <a class="btn prose__action" href="budgets.html">Поставить лимит</a>
+        </article>
+      </div>
+    </div>
+
+    <section class="related container" aria-labelledby="more-title">
+      <h2 class="related__title" id="more-title">Что почитать дальше</h2>
+      <div class="related__grid">
+        <article class="teaser">
+          <div class="teaser__media">
+            <img class="teaser__img" src="../img/articles/50-30-20.jpg" alt="Студенческий билет и купюры на столе" width="320" height="320" loading="lazy">
+          </div>
+          <div>
+            <h3 class="teaser__title"><a class="teaser__link" href="article-50-30-20.html">Правило 50/30/20 простыми словами</a></h3>
+            <p class="teaser__meta">5 минут чтения</p>
+          </div>
+        </article>
+        <article class="teaser">
+          <div class="teaser__media teaser__media--coin">
+            <img class="teaser__img" src="../img/articles/budget-habits.jpg" alt="Блокнот со списком покупок" width="320" height="320" loading="lazy">
+          </div>
+          <div>
+            <h3 class="teaser__title"><a class="teaser__link" href="article-budget-habits.html">Как вести бюджет и не бросить через неделю</a></h3>
+            <p class="teaser__meta">7 минут чтения</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer--compact">
+    <div class="footer__bar container">
+      <span>Монетка — учебный проект по курсу вёрстки, 2026</span>
+      <nav class="footer__links" aria-label="Учебные работы">
+        <a class="footer__bar-link" href="../tasks/index.html">Задания</a>
+        <a class="footer__bar-link" href="../tasks/coursework/index.html">Курсовая работа</a>
+        <a class="footer__bar-link" href="about.html">О проекте</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/header.js"></script>
+</body>
+</html>

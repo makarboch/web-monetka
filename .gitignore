@@ -1,0 +1,6 @@
+# Настройки IDE (JetBrains)
+.idea/
+
+# Системные файлы ОС
+.DS_Store
+Thumbs.db

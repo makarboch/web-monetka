@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Монетка — правило 50/30/20</title>
+  <meta name="description" content="Правило 50/30/20 простыми словами: как поделить доход на обязательное, желания и накопления.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@300..800,0..100&amp;display=swap">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="../index.html" aria-label="Монетка, на главную">
+        <span class="logo__coin" aria-hidden="true"></span>
+        <span class="logo__text">монетка</span>
+      </a>
+      <button class="header__toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="header__toggle-icon" aria-hidden="true"></span>
+        <span class="header__toggle-text">Меню</span>
+      </button>
+      <div class="header__menu" id="site-menu">
+        <nav class="header__nav" aria-label="Основное меню">
+          <a class="header__link" href="operations.html">Операции</a>
+          <a class="header__link" href="analytics.html">Аналитика</a>
+          <a class="header__link" href="budgets.html">Бюджеты</a>
+          <a class="header__link" href="journal.html" aria-current="page">Журнал</a>
+          <a class="header__link" href="../tasks/index.html">Задания</a>
+        </nav>
+        <a class="btn header__cta" href="operations.html">Записать трату</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-page">
+      <div class="article-head container">
+        <p class="breadcrumbs"><a href="journal.html">Журнал</a><span class="breadcrumbs__sep" aria-hidden="true"> / </span><span class="breadcrumbs__current">Основы бюджета</span></p>
+        <h1 class="article-head__title">Правило 50/30/20 простыми словами</h1>
+        <p class="article-head__lead">Самый простой способ понять, нормально ли ты распределяешь деньги. Доход делится на три части, и у каждой своя задача.</p>
+        <p class="article-head__meta"><time datetime="2026-10-20">20 октября 2026</time>, 5 минут чтения</p>
+      </div>
+
+      <figure class="article-cover container">
+        <div class="article-cover__media figure__media">
+          <img class="figure__img" src="../img/articles/50-30-20-cover.jpg" alt="Студент за ноутбуком листает книгу" width="1200" height="514">
+        </div>
+      </figure>
+
+      <div class="article-layout container">
+        <nav class="toc" aria-label="Содержание статьи">
+          <p class="toc__title">В статье</p>
+          <ul class="toc__list">
+            <li><a class="toc__link" href="#origin">Откуда взялось правило</a></li>
+            <li><a class="toc__link" href="#parts">Что входит в каждую часть</a></li>
+            <li><a class="toc__link" href="#example">Пример: бюджет студента</a></li>
+            <li><a class="toc__link" href="#small">Если доход маленький</a></li>
+            <li><a class="toc__link" href="#check">Как проверить себя</a></li>
+          </ul>
+        </nav>
+
+        <article class="prose num">
+          <h2 id="origin">Откуда взялось правило</h2>
+          <p>Правило описала Элизабет Уоррен, тогда профессор Гарвардской школы права, вместе с дочерью Амелией Уоррен Тьяги в книге «All Your Worth» 2005 года. Их идея была в том, что не нужно считать каждую копейку: достаточно следить за пропорциями.</p>
+          <p>Половина дохода уходит на то, без чего не прожить. Почти треть остаётся на то, что делает жизнь приятнее. Пятая часть откладывается. Если пропорции соблюдаются, бюджет в порядке, даже если отдельные траты кажутся лишними.</p>
+
+          <h2 id="parts">Что входит в каждую часть</h2>
+          <figure class="figure figure--right">
+            <div class="figure__media figure__media--portrait figure__media--coin">
+              <img class="figure__img" src="../img/articles/50-30-20-groceries.jpg" alt="Продукты из магазина на кухонном столе" width="600" height="800" loading="lazy">
+            </div>
+            <figcaption class="figure__caption">Продукты — обязательная часть. Доставка готовой еды уже относится к желаниям.</figcaption>
+          </figure>
+          <ul>
+            <li><strong>50% — обязательное.</strong> Жильё, связь, продукты, проезд, учёба. Это траты, которые придётся сделать в любом случае.</li>
+            <li><strong>30% — желания.</strong> Кафе и доставка, развлечения, подписки, одежда сверх необходимого. Без них можно прожить, но не хочется.</li>
+            <li><strong>20% — накопления.</strong> Финансовая подушка, цели вроде нового ноутбука и погашение долгов, если они есть.</li>
+          </ul>
+          <p>Граница между обязательным и желаниями у каждого своя. Проездной до университета — обязательная трата, такси в соседний квартал — уже нет.</p>
+
+          <h2 id="example">Пример: бюджет студента</h2>
+          <p>Возьмём доход 38 000 ₽ в месяц: стипендия, подработка и помощь от родителей. По правилу он делится так:</p>
+          <dl class="calc">
+            <div class="calc__row"><dt class="calc__label">Обязательное, 50%</dt><dd class="calc__value">19 000 ₽</dd></div>
+            <div class="calc__row"><dt class="calc__label">Желания, 30%</dt><dd class="calc__value">11 400 ₽</dd></div>
+            <div class="calc__row"><dt class="calc__label">Накопления, 20%</dt><dd class="calc__value">7 600 ₽</dd></div>
+          </dl>
+          <p>Теперь сравним с реальным октябрём. На обязательное ушло 18 080 ₽, это 48% — в пределах нормы. На желания потрачено 13 160 ₽, то есть 35%: на пять пунктов больше рекомендации, и почти всю разницу дали кафе и доставка. Отложено 6 760 ₽ — 18%, немного не дотянули до 20%.</p>
+          <figure class="figure">
+            <div class="figure__media figure__media--cafe">
+              <img class="figure__img" src="../img/articles/50-30-20-delivery.jpg" alt="Кофе навынос и пакет с доставкой еды" width="1400" height="788" loading="lazy">
+            </div>
+            <figcaption class="figure__caption">Кафе и доставка чаще всего «съедают» долю накоплений: по одной покупке это незаметно.</figcaption>
+          </figure>
+          <p>Вывод простой: если сократить доставку на тысячу-полторы в месяц, правило выполнится полностью, и отказываться ни от чего больше не придётся.</p>
+
+          <h2 id="small">Если доход маленький</h2>
+          <figure class="figure figure--left">
+            <div class="figure__media figure__media--square">
+              <img class="figure__img" src="../img/articles/50-30-20-jar.jpg" alt="Стеклянная банка с монетами" width="600" height="600" loading="lazy">
+            </div>
+            <figcaption class="figure__caption">Даже 5% от каждого поступления за год складываются в заметную сумму.</figcaption>
+          </figure>
+          <p>Если живёшь только на стипендию, пропорции 50/30/20 могут выглядеть странно: половины дохода на обязательное просто не хватит. Это нормально. Правило — ориентир, а не закон.</p>
+          <p>Начни с малого: откладывай хотя бы 5% от любого поступления сразу, в день, когда пришли деньги, а не в конце месяца. Долю желаний пересматривай раз в месяц, когда видишь итоги. Когда доход вырастет, пропорции сами приблизятся к рекомендованным.</p>
+
+          <h2 id="check">Как проверить себя</h2>
+          <p>В разделе «Бюджеты» отметь, какие категории для тебя обязательные. Аналитика сама посчитает доли за месяц и покажет, где ты выходишь за рамки.</p>
+          <a class="btn prose__action" href="analytics.html">Открыть аналитику</a>
+        </article>
+      </div>
+    </div>
+
+    <section class="related container" aria-labelledby="more-title">
+      <h2 class="related__title" id="more-title">Что почитать дальше</h2>
+      <div class="related__grid">
+        <article class="teaser">
+          <div class="teaser__media teaser__media--coin">
+            <img class="teaser__img" src="../img/articles/budget-habits.jpg" alt="Блокнот со списком покупок" width="320" height="320" loading="lazy">
+          </div>
+          <div>
+            <h3 class="teaser__title"><a class="teaser__link" href="article-budget-habits.html">Как вести бюджет и не бросить через неделю</a></h3>
+            <p class="teaser__meta">7 минут чтения</p>
+          </div>
+        </article>
+        <article class="teaser">
+          <div class="teaser__media teaser__media--cafe">
+            <img class="teaser__img" src="../img/articles/small-spends.jpg" alt="Стакан кофе навынос среди кофейных зёрен" width="320" height="320" loading="lazy">
+          </div>
+          <div>
+            <h3 class="teaser__title"><a class="teaser__link" href="article-small-spends.html">Мелкие траты, которые съедают бюджет</a></h3>
+            <p class="teaser__meta">4 минуты чтения</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer--compact">
+    <div class="footer__bar container">
+      <span>Монетка — учебный проект по курсу вёрстки, 2026</span>
+      <nav class="footer__links" aria-label="Учебные работы">
+        <a class="footer__bar-link" href="../tasks/index.html">Задания</a>
+        <a class="footer__bar-link" href="../tasks/coursework/index.html">Курсовая работа</a>
+        <a class="footer__bar-link" href="about.html">О проекте</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/header.js"></script>
+</body>
+</html>

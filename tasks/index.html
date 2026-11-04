@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Монетка — задания</title>
+  <meta name="description" content="Лабораторные работы и курсовая по курсу вёрстки.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@300..800,0..100&amp;display=swap">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="../index.html" aria-label="Монетка, на главную">
+        <span class="logo__coin" aria-hidden="true"></span>
+        <span class="logo__text">монетка</span>
+      </a>
+      <button class="header__toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="header__toggle-icon" aria-hidden="true"></span>
+        <span class="header__toggle-text">Меню</span>
+      </button>
+      <div class="header__menu" id="site-menu">
+        <nav class="header__nav" aria-label="Основное меню">
+          <a class="header__link" href="../pages/operations.html">Операции</a>
+          <a class="header__link" href="../pages/analytics.html">Аналитика</a>
+          <a class="header__link" href="../pages/budgets.html">Бюджеты</a>
+          <a class="header__link" href="../pages/journal.html">Журнал</a>
+          <a class="header__link" href="index.html" aria-current="page">Задания</a>
+        </nav>
+        <a class="btn header__cta" href="../pages/operations.html">Записать трату</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main container">
+    <h1 class="page-head__title">Задания</h1>
+    <p class="page-lead">Лабораторные работы и курсовая по курсу вёрстки. Каждую работу можно посмотреть прямо здесь или открыть отдельно.</p>
+
+    <ol class="tasks page-section">
+      <li class="task">
+        <span class="task__num num" aria-hidden="true">1</span>
+        <h2 class="task__title">Сайт «Монетка»</h2>
+        <p class="task__text">Этот сайт: лендинг, сервис учёта доходов и расходов, журнал со статьями. Вёрстка по макету на чистых HTML, CSS и JS, логотип только средствами CSS.</p>
+        <p class="task__meta">Лабораторная работа 1</p>
+        <a class="link-action task__link" href="../pages/about.html">О проекте</a>
+      </li>
+      <li class="task">
+        <span class="task__num num" aria-hidden="true">2</span>
+        <h2 class="task__title">Рисунок на CSS</h2>
+        <p class="task__text">Зелёный динозавр с рожками, трава и ветка с листьями — нарисованы только блоками, позиционированием, скруглениями и градиентами, без картинок.</p>
+        <p class="task__meta">Лабораторная работа 2, вариант 1</p>
+        <a class="link-action task__link" href="lab-2.html">Посмотреть работу</a>
+      </li>
+      <li class="task">
+        <span class="task__num num" aria-hidden="true">3</span>
+        <h2 class="task__title">Flexbox-ролик</h2>
+        <p class="task__text">Сценка про принца, лягушку и принцессу. Персонажи расставлены через flexbox, сюжет разыгрывается при наведении и нажатии мыши.</p>
+        <p class="task__meta">Лабораторная работа 3, вариант 3</p>
+        <a class="link-action task__link" href="lab-3.html">Посмотреть работу</a>
+      </li>
+      <li class="task">
+        <span class="task__num num" aria-hidden="true">4</span>
+        <h2 class="task__title">DOM-тест «Слэнг»</h2>
+        <p class="task__text">Тест на знание молодёжного сленга. Вопросы и ответы создаются из JavaScript через DOM, в конце — счёт правильных ответов.</p>
+        <p class="task__meta">Лабораторная работа 4</p>
+        <a class="link-action task__link" href="lab-4.html">Посмотреть работу</a>
+      </li>
+      <li class="task task--soon">
+        <span class="task__num" aria-hidden="true">К</span>
+        <h2 class="task__title">Курсовая работа</h2>
+        <p class="task__text">Появится здесь позже.</p>
+        <p class="task__meta">Скоро</p>
+        <a class="link-action task__link" href="coursework/index.html">Страница курсовой</a>
+      </li>
+    </ol>
+  </main>
+
+  <footer class="footer footer--compact">
+    <div class="footer__bar container">
+      <span>Монетка — учебный проект по курсу вёрстки, 2026</span>
+      <nav class="footer__links" aria-label="Учебные работы">
+        <a class="footer__bar-link" href="index.html">Задания</a>
+        <a class="footer__bar-link" href="coursework/index.html">Курсовая работа</a>
+        <a class="footer__bar-link" href="../pages/about.html">О проекте</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/header.js"></script>
+</body>
+</html>

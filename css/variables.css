@@ -1,0 +1,64 @@
+:root {
+  --ink: #1A1D3A;
+  --ink-soft: #3A3F5C;
+  --ink-prose: #262A48;
+  --cobalt: #2E3BDB;
+  --cobalt-hover: #1F2AB0;
+  --coin: #FFC21A;
+  --ground: #F1F2F6;
+  --surface: #FFFFFF;
+  --income: #0B7A53;
+  --income-soft: #8FD3B4;
+  --overspend: #D2283F;
+  --muted: #5A5F7A;
+  --muted-on-ink: #C9CCE0;
+  --on-ink-soft: #E4E6F2;
+  --muted-soft: #9AA0B8;
+  --placeholder: #6E7390;
+  --line: #D5D8E3;
+  --line-soft: #E3E5EC;
+
+  --tint-cobalt: #E4E7FB;
+  --tint-coin: #FFE9B0;
+  --tint-cafe: #FFD9C2;
+
+  --cat-food: #2E3BDB;
+  --cat-cafe: #FF7A1A;
+  --cat-home: #1A1D3A;
+  --cat-fun: #E8559A;
+  --cat-trans: #2BB3E6;
+  --cat-study: #8D96F0;
+  --cat-subs: #6A3FD9;
+  --cat-other: #9AA0B8;
+
+  --font: 'Geologica', system-ui, sans-serif;
+
+  --fs-display: clamp(44px, 6vw, 76px);
+  --fs-section: clamp(32px, 4vw, 48px);
+  --fs-article-title: clamp(40px, 5.5vw, 68px);
+  --fs-h2: 32px;
+  --fs-prose-h2: 30px;
+  --fs-h3: 24px;
+  --fs-xl: 28px;
+  --fs-lead: 22px;
+  --fs-lg: 21px;
+  --fs-text: 18px;
+  --fs-md: 17px;
+  --fs-ui: 16px;
+  --fs-sm: 15px;
+  --fs-xs: 14px;
+  --fs-2xs: 13px;
+
+  --fs-logo: 23px;
+  --fs-big-num: 60px;
+  --fs-forecast: 48px;
+  --fs-suffix-lg: 26px;
+  --fs-page-title: clamp(36px, 4vw, 48px);
+  --fs-report-lead: clamp(26px, 3vw, 36px);
+  --fs-kpi: clamp(14px, 4vw, 32px);
+  --fs-kpi-quad: clamp(18px, 5vw, 30px);
+  --fs-kpi-label: clamp(13px, 3vw, 15px);
+
+  --container: 1200px;
+  --gutter: clamp(20px, 4vw, 40px);
+}

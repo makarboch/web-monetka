@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Монетка — о проекте</title>
+  <meta name="description" content="О проекте «Монетка»: зачем сделан сайт, из каких страниц состоит и как свёрстан.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@300..800,0..100&amp;display=swap">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="../index.html" aria-label="Монетка, на главную">
+        <span class="logo__coin" aria-hidden="true"></span>
+        <span class="logo__text">монетка</span>
+      </a>
+      <button class="header__toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="header__toggle-icon" aria-hidden="true"></span>
+        <span class="header__toggle-text">Меню</span>
+      </button>
+      <div class="header__menu" id="site-menu">
+        <nav class="header__nav" aria-label="Основное меню">
+          <a class="header__link" href="operations.html">Операции</a>
+          <a class="header__link" href="analytics.html">Аналитика</a>
+          <a class="header__link" href="budgets.html">Бюджеты</a>
+          <a class="header__link" href="journal.html">Журнал</a>
+          <a class="header__link" href="../tasks/index.html">Задания</a>
+        </nav>
+        <a class="btn header__cta" href="operations.html">Записать трату</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-page">
+    <div class="article-head container">
+      <h1 class="article-head__title">О проекте</h1>
+      <p class="article-head__lead">«Монетка» — учебный сайт учёта доходов и расходов. Это первая лабораторная работа по курсу вёрстки; на нём же лежат остальные задания и курсовая.</p>
+    </div>
+
+    <div class="article-layout container">
+      <article class="prose">
+        <h2>Зачем этот сайт</h2>
+        <p>Идея простая: человеку, который только начинает вести бюджет, нужно не много графиков, а понятный ответ на вопрос «куда ушли деньги». Поэтому «Монетка» просит минимум — сумму и категорию, — а в конце месяца объясняет итоги словами: сколько потрачено, где превышен лимит и что изменилось по сравнению с прошлым месяцем.</p>
+
+        <h2>Из чего состоит</h2>
+        <ul>
+          <li><strong>Главная</strong> — лендинг: что умеет сервис, мини-форма «Попробуй: запиши трату», пример ленты месяца, статьи и частые вопросы.</li>
+          <li><strong>Операции</strong> — запись расходов и доходов, список по дням, поиск, фильтры и выгрузка в CSV.</li>
+          <li><strong>Аналитика</strong> — итог месяца словами, доли по категориям, лимиты, подсказки, прогноз и график за полгода.</li>
+          <li><strong>Бюджеты</strong> — лимиты на месяц по категориям и цели накоплений.</li>
+          <li><strong>Журнал</strong> — статьи о деньгах с картинками в тексте.</li>
+          <li><strong>Задания</strong> — лабораторные работы и курсовая.</li>
+        </ul>
+
+        <h2>Как свёрстан</h2>
+        <p>Сайт сделан по готовому макету на чистых HTML, CSS и JavaScript — без фреймворков и сборщиков, поэтому открывается двойным щелчком по <code>index.html</code> и работает на GitHub Pages. Раскладка построена на flexbox и grid; таблица используется только там, где данные действительно табличные, — в разборе расходов по категориям.</p>
+        <p>Классы названы по БЭМ: блок, элемент через двойное подчёркивание и модификатор через двойной дефис, например <code>header__link</code> или <code>btn--ghost</code>. Все цвета и размеры шрифтов вынесены в CSS-переменные, поэтому стиль везде одинаковый: одна гарнитура Geologica, прямые углы у всех блоков и кнопок и строгая палитра, где зелёный означает только доходы, а красный — только превышение лимита и ошибки.</p>
+        <p>Записи хранятся в <code>localStorage</code> браузера: на сервер ничего не отправляется. При первом запуске подставляются демо-данные за полгода, чтобы аналитике было что показать.</p>
+
+        <h2>Логотип</h2>
+        <p>Логотип нарисован только средствами CSS — без картинок и SVG. Монета — это один пустой элемент размером 36 × 36 px и два его псевдоэлемента <code>::before</code> и <code>::after</code>:</p>
+        <ul>
+          <li>Сам элемент — жёлтый круг: квадрат со скруглением <strong>border-radius: 50%</strong>.</li>
+          <li><strong>::before</strong> — синий квадрат в правом верхнем углу, стоит через <strong>position: absolute</strong>. Его угол выходит за круг, но <strong>overflow: hidden</strong> обрезает лишнее, и остаётся синяя четверть — как доля в диаграмме расходов.</li>
+          <li><strong>::after</strong> — круг поменьше с тонкой полупрозрачной рамкой <strong>border</strong>, это ободок чеканки.</li>
+        </ul>
+        <p>Рядом с монетой — название «монетка», набранное тем же шрифтом, что и заголовки.</p>
+
+        <h2>Адаптивность</h2>
+        <p>Вёрстка проверена на ширине 1920, 1366, 1024, 768 и 390 пикселей. На узком экране меню прячется за кнопку «Меню», колонки встают друг под друга, а широкие таблица и график прокручиваются вбок внутри своего блока, не растягивая страницу.</p>
+
+        <h2>Автор</h2>
+        <p>Макар Боч, 2026.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer footer--compact">
+    <div class="footer__bar container">
+      <span>Монетка — учебный проект по курсу вёрстки, 2026</span>
+      <nav class="footer__links" aria-label="Учебные работы">
+        <a class="footer__bar-link" href="../tasks/index.html">Задания</a>
+        <a class="footer__bar-link" href="../tasks/coursework/index.html">Курсовая работа</a>
+        <a class="footer__bar-link" href="about.html">О проекте</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/header.js"></script>
+</body>
+</html>
